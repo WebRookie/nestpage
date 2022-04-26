@@ -3,10 +3,11 @@
 
 declare namespace API {
   type CurrentUser = {
-    name?: string;
+    nickname?: string;
     avatar?: string;
-    userid?: string;
+    userId?: string;
     email?: string;
+    role?: string;
     signature?: string;
     title?: string;
     group?: string;
@@ -24,9 +25,9 @@ declare namespace API {
   };
 
   type LoginResult = {
-    status?: string;
-    type?: string;
-    currentAuthority?: string;
+    code: string;
+    data: object;
+    msg: string;
   };
 
   type PageParams = {
@@ -64,8 +65,6 @@ declare namespace API {
   type LoginParams = {
     username?: string;
     password?: string;
-    autoLogin?: boolean;
-    type?: string;
   };
 
   type ErrorResponse = {
